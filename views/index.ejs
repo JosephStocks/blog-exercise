@@ -11,7 +11,9 @@
             <%= title %> 
         </h1>
         <div id="blog-links">
-            <%= blogs %> 
+            <% blogs.forEach(blog => { %>
+                <%= blog.title %> 
+            <% }) %>
         </div>
         
         

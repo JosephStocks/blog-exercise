@@ -10,9 +10,14 @@
         </h1>
         <form class="inline-block w-3/6 space-y-3 relative" method="post" style="font-size: 0;">
             <div class="flex whitespace-nowrap space-x-3" style="font-size: 0;">
-                <input class="border-none shadow-lg flex-1" type="text" name="firstName" id="firstName" placeholder="First Name" required>
-                <input class="border-none shadow-lg flex-1" type="text" name="firstName" id="firstName" placeholder="Last Name" required>
-                
+                <!-- <input class="border-none shadow-lg flex-1" type="text" name="firstName" id="firstName" placeholder="First Name" required>
+                <input class="border-none shadow-lg flex-1" type="text" name="firstName" id="firstName" placeholder="Last Name" required> -->
+                <select name="author" id="author" class="text-gray-500 border-none shadow-lg" required>
+                   <option selected disabled hidden>Author Name</option>
+                    <% authors.forEach(author => { %>
+                        <option class="text-black" value="<%= author.id %>" name="<%= author.id %>"><%= author.firstName %> <%= author.lastName %></option>
+                    <% }) %>
+                </select>
             </div>
             <div>
                 <input class="border-none shadow-lg w-full" type="text" name="title" id="title" placeholder="Blog Title" required>
@@ -20,7 +25,12 @@
             <div>
                 <textarea class="border-none shadow-lg w-full" name="blogcontent" id="blogcontent" cols="30" rows="10" placeholder="Blog Content" required></textarea>
             </div>
-            <input class="absolute px-4 py-2 rounded text-lg border-none shadow-lg right-0" type="submit">
+            <select name="publish" id="publish" class="text-gray-500 border-none shadow-lg block" required>
+                <option selected disabled hidden>Publish?</option>
+                <option class="text-black" value="true" name="true">Yes</option>
+                <option value="false" name="false" disabled class="text-black">Save for Later</option>
+             </select>
+            <input class="absolute px-4 py-2 rounded text-lg border-none shadow-lg hover:bg-white" type="submit">
         </form>
     </div>
 
