@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('partials/head.ejs') %> 
+</head>
+<body class="bg-gradient-to-br from-violet-300 to-violet-600 min-h-screen">
+    <div class="container mx-auto flex flex-col items-center min-h-screen">
+        <h1 class="flex justify-center text-6xl p-10 text-white font-semibold">
+            <%= title %> 
+        </h1>
+        <form class="inline-block w-3/6 space-y-3 relative" method="post" style="font-size: 0;">
+            <div class="flex whitespace-nowrap space-x-3" style="font-size: 0;">
+                <input class="border-none shadow-lg flex-1" type="text" name="firstName" id="firstName" placeholder="First Name" required>
+                <input class="border-none shadow-lg flex-1" type="text" name="firstName" id="firstName" placeholder="Last Name" required>
+                
+            </div>
+            <div>
+                <input class="border-none shadow-lg w-full" type="text" name="title" id="title" placeholder="Blog Title" required>
+            </div>
+            <div>
+                <textarea class="border-none shadow-lg w-full" name="blogcontent" id="blogcontent" cols="30" rows="10" placeholder="Blog Content" required></textarea>
+            </div>
+            <input class="absolute px-4 py-2 rounded text-lg border-none shadow-lg right-0" type="submit">
+        </form>
+    </div>
+
+    <script src="/js/submitBlog.js"></script>
+</body>
+</html>
