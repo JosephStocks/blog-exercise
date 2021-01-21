@@ -1,2 +1,2 @@
 sequelize model:generate --name authors --attributes firstName:string,lastName:string,bio:string,imageURL:string,email:string,twitter:string,linkedin:string;
-sequelize model:generate --name blogs --attributes title:string,authorId:integer,body:string,isPublished:boolean,publishDate:date;
+sequelize model:generate --name blogs --attributes title:string,authorId:integer,body:text,isPublished:boolean,publishDate:date;

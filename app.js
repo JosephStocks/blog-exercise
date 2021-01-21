@@ -15,6 +15,7 @@ app.use(express.static("public"));
 //routes
 app.use(require("./routes"));
 app.use(require("./routes/submitBlog"));
+app.use(require("./routes/viewArticle"));
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);

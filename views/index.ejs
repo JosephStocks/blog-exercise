@@ -3,19 +3,27 @@
 <head>
     <%- include('partials/head.ejs') %> 
 </head>
-<body class="bg-gradient-to-tr from-blue-600 to-indigo-700">
+<body class="bg-gradient-to-tr from-indigo-500 to-violet-500 debug-screens">
     
 
-    <div class="container mx-auto bg-white bg-opacity-95 min-h-screen">
-        <h1 class="flex justify-center text-4xl p-10">
+    <div class="block container mx-auto min-h-screen w-full bg-gray-100 shadow-2xl">
+        <h1 class="flex justify-center text-5xl p-14 font-bold text-indigo-600">
             <%= title %> 
         </h1>
-        <div id="blog-links">
+        <div id="blog-links" class="space-y-12 flex flex-col justify-center items-center mt-10">
             <% blogs.forEach(blog => { %>
-                <%= blog.title %> 
+                <a  class="flex justify-start  overflow-hidden transition-all duration-200 w-9/12 bg-white rounded-md shadow-sm space-y-1 hover:shadow-2xl hover:bg-gradient-to-tr hover:from-blue-500 hover:to-indigo-600" href="/blog/<%= blog.id %> " target="_self" rel="noopener noreferrer">
+                    <div class="w-32 h-auto bg-cover bg-center" style="background-image: url('<%= blog['author.imageURL'] %>')"></div>
+                    <div class=" p-5">
+                        <h1 class="text-4xl font-bold"><%= blog.title %></h1>
+                        <h3 class="text-xl font-semibold text-indigo-600"><%= blog['author.firstName'] %> <%= blog['author.lastName'] %></h3>
+                    </div>
+                </a>
+                <!-- <div class="w-9/12 bg-white rounded shadow-2xl p-5 space-y-1">
+
+                </div> -->
             <% }) %>
         </div>
-        
         
     </div>
 </body>

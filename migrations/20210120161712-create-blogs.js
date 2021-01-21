@@ -19,7 +19,7 @@ module.exports = {
                 },
             },
             body: {
-                type: Sequelize.STRING,
+                type: Sequelize.TEXT,
             },
             isPublished: {
                 type: Sequelize.BOOLEAN,

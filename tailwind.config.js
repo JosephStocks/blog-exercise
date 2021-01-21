@@ -96,5 +96,6 @@ module.exports = {
         require("@tailwindcss/typography"),
         checkedSiblingPlugin,
         require("tailwindcss-interaction-variants"),
+        require("tailwindcss-debug-screens"),
     ],
 };
